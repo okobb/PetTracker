@@ -16,3 +16,14 @@ class Pet:
   def birthday(self):
       self.age += 1
     
+bobby = Pet("Bobby" , "Cat" , 5)
+max = Pet("Max" , "Dog" , 8)
+woody = Pet("Woody" , "Bird" , 10)
+
+bobby.display_info()
+max.display_info()
+woody.display_info()
+
+max.birthday()
+max.mark_adopted()
+max.display_info()
