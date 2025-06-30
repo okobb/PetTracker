@@ -1,44 +1,47 @@
 class Pet:
-  # Created a constructor for pet class
+  # Creating a constructor for pet class
   def __init__(self,name, species, age):
     self.name = name
     self.species  = species
     self.age = age
     self.adopted = False
    
-  # Created a function to display pet info  
+  # Creating a method to display pet info  
   def display_info(self):
       print(f"Pet name: {self.name}, Pet species: {self.species}, Pet Age: {self.age}, Adopted: {self.adopted}\n")
       
-  # Created a function to set the pet as adopted    
+  # Creating a method to set the pet as adopted    
   def mark_adopted(self):
       self.adopted = True
       
-  # Created a function to increase age by one 
+  # Creating a method to increase age by one 
   def birthday(self):
       self.age += 1
+  # Creating a method to increase rename pet 
+  def rename(self, new_name):
+      self.name = new_name
       
-# Created objects for testing purposes    
-bobby = Pet("Bobby" , "Cat" , 5)
-max = Pet("Max" , "Dog" , 8)
-woody = Pet("Woody" , "Bird" , 10)
+# Creating objects for testing purposes    
+cat = Pet("Bobby" , "Cat" , 5)
+dog = Pet("Max" , "Dog" , 8)
+bird = Pet("Woody" , "Bird" , 10)
 
 # Displaying the info of created pets
-bobby.display_info()
-max.display_info()
-woody.display_info()
+cat.display_info()
+dog.display_info()
+bird.display_info()
 
 # Testing and showing the results of created functions
-max.birthday()
-max.mark_adopted()
-max.display_info()
+dog.birthday()
+dog.mark_adopted()
+dog.display_info()
 
-# Created a manual pet list
+# Creating a manual pet list
 pets = [{"name" : "Simon" , "species" : "Cat" , "age" : 7, "adopted" : False},
         {"name" : "Rex" , "species" : "Dog" , "age" : 9, "adopted" : True},
         {"name" : "Tweety" , "species" : "Bird" , "age" : 3, "adopted" : False}]
 
-# Created a function to find non-adopted pets
+# Creating a function to find non-adopted pets
 def find_non_adopted(list):
     found  = []
     for pet in list:
@@ -52,6 +55,11 @@ def find_non_adopted(list):
         for name in found:
             print (str(name))
         print("\n")
-     
+
+# Testing the created function  
 find_non_adopted(pets)
+
+# Testing rename method
+cat.rename("Garfield")
+cat.display_info()
 
