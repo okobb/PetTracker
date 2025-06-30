@@ -8,7 +8,7 @@ class Pet:
    
   # Created a function to display pet info  
   def display_info(self):
-      print(f"Pet name: {self.name}, Pet species: {self.species}, Pet Age: {self.age}, Adopted: {self.adopted}")
+      print(f"Pet name: {self.name}, Pet species: {self.species}, Pet Age: {self.age}, Adopted: {self.adopted}\n")
       
   # Created a function to set the pet as adopted    
   def mark_adopted(self):
@@ -33,4 +33,25 @@ max.birthday()
 max.mark_adopted()
 max.display_info()
 
-Pets = [["Simon" , "Cat" , 7 , False], ["Rex" , "Dog" , 9 , True] , ["Tweety" , "Bird" , 3 , False]]
+# Created a manual pet list
+pets = [{"name" : "Simon" , "species" : "Cat" , "age" : 7, "adopted" : False},
+        {"name" : "Rex" , "species" : "Dog" , "age" : 9, "adopted" : True},
+        {"name" : "Tweety" , "species" : "Bird" , "age" : 3, "adopted" : False}]
+
+# Created a function to find non-adopted pets
+def find_non_adopted(list):
+    found  = []
+    for pet in list:
+        if pet["adopted"] == True:
+            found.append(pet["name"])
+    
+    if len(found) == 1:
+        print(found[0] + " is the only adopted pet in this list.\n")
+    else:
+        print("The adopted pets are: " )
+        for name in found:
+            print (str(name))
+        print("\n")
+     
+find_non_adopted(pets)
+
